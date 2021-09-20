@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artyom Lobodenko</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/dracula.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="main_nav">
+        <ul class="main_nav_menu">
+          <li class="menu_item">
+            <a class="menu_link" href="#About">About Me</a>
+          </li>
+          <li class="menu_item">
+            <a class="menu_link" href="#Skills">Skills</a>
+          </li>
+          <li class="menu_item">
+            <a class="menu_link" href="#Code">Code</a>
+          </li>
+          <li class="menu_item">
+            <a class="menu_link" href="#Contacts">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="photo_container">
+        <img
+          class="profile_photo"
+          src="img/profile_photo.jpg"
+          alt="Artyom Lobodenko"
+        />
+      </div>
+      <h1 class="main_title">Artyom Lobodenko</h1>
+
+      <h2 class="additional_title"><i>Begginer JavaScript developer</i></h2>
+      <!--<h3 class="email_button">
+    <a href="mailto:brokesmail@gmail.com">Email Me</a>
+  </h3> -->
+      <p class="main_text">
+        <a id="About">
+          Hi! I was born in 1994. My mind is always open for new kind of things.
+          I like travelling, reading books and attendings shows of my favourite
+          music artists all aroung the continent. Currently I'm trying to study
+          JavaScript on RS School Courses and hope to start working as a
+          JavaScript developer in the future.
+        </a>
+      </p>
+      <ul class="info_list">
+        <li>
+          Education: graduated, 2017 - Belarusian National Technical University:
+          Engineer-Economist
+        </li>
+        <li>Languages: Russinan (native), English (B2)</li>
+        <li>Location: Minsk, Belarus</li>
+        <li>Currently RS School JavaScript/Front-end 2021Q3 Student</li>
+      </ul>
+
+      <div>
+        <h2 class="box_header"><a id="Skills">My skills</a></h2>
+        <ul class="main_box_style skill_container">
+          <li>
+            <div class="skill">
+              HTML
+              <div class="dot_container">
+                <div class="dot dot_filled"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="skill">
+              CSS
+              <div class="dot_container">
+                <div class="dot dot_filled"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="skill">
+              JavaScript
+              <div class="dot_container">
+                <div class="dot dot_filled"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="skill">
+              Photoshop
+              <div class="dot_container">
+                <div class="dot dot_filled"></div>
+                <div class="dot dot_filled"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="box_header"><a id="Code">Code examples</a></h2>
+        <div class="code_box_style">
+          <h3 class="code_title">JavaScript</h3>
+          <pre>
+              <code class="language-javascript">
+                class Node {
+                    constructor(value = null, left = null, right = null) {
+                      this.value = value;
+                      this.right = right;
+                      this.left = left;
+                    }
+
+                    toString() {
+                      return JSON.stringify(this);
+                    }
+                }
+
+                class BinarySearchTree {
+                  constructor() {
+                    this.root = null;
+                  }
+
+                  /*
+                   * A recursive in-order traversal. Takes a callback function, process, which is applied to each node.
+                   */
+                  printInOrder(process) {
+                    let inOrder = (node) => {
+                      if (node.left !== null) {
+                        inOrder(node.left);
+                      }
+
+                      process.call(this, node);
+
+                      if (node.right !== null) {
+                        inOrder(node.right);
+                      }
+                    };
+
+                    inOrder(this.root);
+                  }
+
+                  /*
+                   * A recursive pre-order traversal.
+                   */
+                  printPreOrder(process) {
+                    let preOrder = (node) => {
+                      process.call(this, node);
+
+                      if (node.left !== null) {
+                        preOrder(node.left);
+                      }
+
+                      if (node.right !== null) {
+                        preOrder(node.right);
+                      }
+                    }
+
+                    preOrder(this.root);
+                  }
+
+                  /*
+                   * A recursive post-order traversal.
+                   */
+                  printPostOrder(process) {
+                    let postOrder = (node) => {
+                      if (node.left !== null) {
+                        postOrder(node.left);
+                      }
+
+                      if (node.right !== null) {
+                        postOrder(node.right);
+                      }
+
+                      process.call(this, node);
+                    }
+
+                    postOrder(this.root);
+                  }
+
+                  traverseBFS() {
+                    let result = []
+                    let queue = [this.root];
+                    while (queue.length > 0) {
+
+                      let node = queue.shift();
+
+                      result.push(node.value);
+
+                      if (node.left) {
+                        queue.push(node.left);
+                      }
+
+                      if (node.right) {
+                        queue.push(node.right);
+                      }
+                    }
+                    return result;
+                  }
+
+                  traverseZigZag() {
+                    let stack = [this.root];
+                    // store next level node in nextLevel because order changes
+                    let nextLevel = [];
+                    let fromLeft = true;
+                    let result = [];
+
+                    while(stack.length) {
+                      let len = stack.length;
+
+                      for (let i=0; i<len; i++) {
+                        let el = stack.pop();
+                        result.push(el.value);
+                        if (fromLeft) {
+                          el.left && nextLevel.push(el.left);
+                          el.right && nextLevel.push(el.right);
+                        } else {
+                          el.right && nextLevel.push(el.right);
+                          el.left && nextLevel.push(el.left);
+                        }
+                      }
+
+                      fromLeft = !fromLeft;
+                      stack = nextLevel;
+                      nextLevel = [];
+                    }
+                    return result;
+                  }
+
+                  /*
+                   * Searches for a value in the tree and returns a node.
+                   */
+                  find(value) {
+                    let traverse = (node) => {
+                      if (node == null || node.value === value) {
+                        return node;
+                      } else if (value < node.value) {
+                        traverse(node.left);
+                      } else {
+                        traverse(node.right);
+                      }
+                    };
+                    return traverse(this.root);
+                  }
+
+                  /*
+                   * Takes a value to insert into the tree.
+                   */
+                  insert(value) {
+                    if (this.root === null) {
+                      this.root = new Node(value);
+                    } else {
+                      let current = this.root;
+                      while (true) {
+                        if (value > current.value) {
+                          if (current.right === null) {
+                            current.right = new Node(value);
+                            break;
+                          } else {
+                            current = current.right;
+                          }
+                        } else if (value < current.value) {
+                          if (current.left === null) {
+                            current.left = new Node(value);
+                            break;
+                          } else {
+                            current = current.left;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  /*
+                   * get min value from the tree.
+                   */
+                  getMin(node = this.root) {
+                    while(node.left) {
+                      node = node.left;
+                    }
+                    return node.value;
+                  }
+
+                  /*
+                   * get min value from the tree.
+                   */
+                  getMax(node = this.root) {
+                    while(node.right) {
+                      node = node.right;
+                    }
+                    return node.value;
+                  }
+
+                  /*
+                   * Remove value from the tree.
+                   */
+                  remove(val, node = this.root) {
+                    if (!node) {
+                      return null;
+                    }
+
+                    if (val < node.value) {
+                      node.left = this.remove(val, node.left);
+                    } else if (val > node.value) {
+                      node.right = this.remove(val, node.right);
+                    } else {
+                      if (!node.left) {
+                        return node.right;
+                      } else if (!node.right) {
+                        return node.left;
+                      } else {
+                        node.value = this.getMin(node.right);
+                        node.right = this.remove(node.value, node.right);
+                      }
+                    }
+                    return node;
+                  }
+
+                  /**
+                   * Find the least /lowest common ancestor of two value
+                   */
+                  leastCommonAncestor(n1, n2) {
+                    if (this.root == null) {
+                      return this.root;
+                    }
+
+                    let queue = [this.root];
+                    while (queue.length) {
+                      let root = queue.shift();
+                      if (root.value === n1.value ||
+                          root.value === n2.value ||
+                          (root.value >= n1.value && root.value <= n2.value) ||
+                          (root.value <= n1.value && root.value >= n2.value)
+                         ){
+                         return root;
+                      } else {
+                        if(root.value > n1.value && root.value > n2.value) {
+                          root.left && queue.push(root.left);
+                        } else {
+                          root.right && queue.push(root.right);
+                        }
+                      }
+                    }
+                    return null;
+                  }
+
+
+                  findHeight(root = this.root) {
+                    let height = (node) => {
+                      if (node === null) {
+                        return -1;
+                      }
+
+                      let lefth = height(node.left);
+                      let righth = height(node.right);
+
+                      return 1 + Math.max(lefth, righth);
+                    }
+                    return height(root);
+                  }
+
+                  /*
+                   * check if binary tree is balanced or not
+                   */
+                  isBalanced(){
+                    let balanced = function(node) {
+                      if (node === null) { // Base case
+                        return true;
+                      }
+                      let heightDifference = Math.abs(this.findHeight(node.left) - this.findHeight(node.right));
+                      if (heightDifference > 1) {
+                        return false;
+                      } else {
+                        return balanced(node.left) && balanced(node.right);
+                      }
+                    }
+                    return balanced(this.root);
+                  }
+
+                  /*
+                   * Returns a boolean indicating whether a given value is contained in the tree.
+                   */
+                  contains(value) {
+                    return !!this.find(value);
+                  }
+
+                  /*
+                   * Returns an integer indicating the number of nodes in the tree.
+                   */
+                  size() {
+                    let length = 0;
+                    this.printInOrder(() => {
+                      length++;
+                    });
+                    return length;
+                  }
+
+                  /*
+                   * Returns an array containing the tree's nodes, in ascending order.
+                   */
+                  toArray() {
+                    let arr = [];
+                    this.printInOrder((node) => {
+                      arr.push(node.value);
+                    });
+                    return arr;
+                  }
+
+                  /*
+                   * Returns the tree in order as a serialized JSON string.
+                   */
+                  toString() {
+                    let str = '';
+                    this.printInOrder((node) => {
+                      str += JSON.stringify(node.value) + '\n';
+                    });
+                    return str;
+                  }
+
+                  /*
+                   * Returns the node with the nth-largest value in the tree.
+                   */
+                  nthLargest(n) {
+                    let arr = this.toArray();
+                    return arr[arr.length - (n + 1)];
+                  }
+
+                  /*
+                   * Returns the node with the nth-smallest value in the tree.
+                   */
+                  nthSmallest(n) {
+                    let arr = this.toArray();
+                    return arr[n];
+                  }
+                }
+
+             </code>
+            </pre>
+          <h3 class="code_title">CSS</h3>
+          <pre><code class="language-javascript">
+            .skill_stars {
+            width: 50px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .footer_logo {
+            display: block;
+            width: 35px;
+            height: 35px;
+            margin: 0 auto;
+            transition: 1s;
+          }
+          
+          .footer_logo:hover {
+            transform: scale(1.2);
+          }</code></pre>
+        </div>
+      </div>
+
+      <div id="Contacts">
+        <h2 class="box_header"><a>My contacts </a></h2>
+        <ul class="main_box_style">
+          <li>
+            <a href="https://www.linkedin.com/in/artyom-lobodenko-87291b8a/">
+              <img
+                class="footer_logo"
+                src="img/linkedin_black_logo_round.png"
+                alt="LinkedIn Profile"
+                title="LinkedIn Profile"
+            /></a>
+          </li>
+          <li>
+            <a href="discordapp.com/users/134437122898657281">
+              <img
+                class="footer_logo"
+                src="img/discord_logo_black_round.png"
+                alt="Discord"
+                title="Discord"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/artyom.lobodenko">
+              <img
+                class="footer_logo"
+                src="img/fb_logo_black_round.png"
+                alt="Facebook logo"
+                title="Facebook Profile"
+            /></a>
+          </li>
+          <li>
+            <a href="mailto:brokesmail@gmail.com">
+              <img
+                class="footer_logo"
+                src="img/mail_black_logo_round.png"
+                alt="E-mail"
+                title="E-mail"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <ul class="bottom_list">
+          <li>
+            <a href="https://github.com/brokezm/rsschool-cv">
+              <img
+                class="github_logo"
+                src="img/git.png"
+                alt="Git Hub Profile"
+                title="Git Hub Profile"
+            /></a>
+          </li>
+          <li>© 2021</li>
+          <li>
+            <a href="https://rs.school/js/">
+              <img
+                class="rs_logo"
+                src="img/rss.svg"
+                alt="RS School Logo"
+                title="RS School"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
